@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez Ty Louis Paris, votre restaurant breton authentique à Paris 12e. Cuisine de terroir, produits frais et ambiance conviviale.">
+    <meta name="robots" content="noindex">
+    <title>Ty Louis Paris - Restaurant Breton Authentique</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html{scroll-behavior:smooth}
+        .gradient-button {
+            background-image: linear-gradient(to right, #6EE7B7 0%, #3B82F6 51%, #6EE7B7 100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+        }
+        .gradient-button:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body class="font-sans text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-lg py-4" x-data="{ open: false }">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Ty Louis Paris</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-6">
+                <a href="#accueil" class="hover:text-blue-600">Accueil</a>
+                <a href="#services" class="hover:text-blue-600">Notre Cuisine</a>
+                <a href="#about" class="hover:text-blue-600">À Propos</a>
+                <a href="#contact" class="hover:text-blue-600">Contact</a>
+                <a href="https://tylouis.fr" target="_blank" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Réserver une table</a>
+            </div>
+
+            <!-- Mobile Burger Icon -->
+            <div class="lg:hidden">
+                <button @click="open = !open" class="text-gray-800 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="open" @click.away="open = false" class="lg:hidden bg-white shadow-lg py-4 mt-2">
+            <a href="#accueil" @click="open = false" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Accueil</a>
+            <a href="#services" @click="open = false" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Notre Cuisine</a>
+            <a href="#about" @click="open = false" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">À Propos</a>
+            <a href="#contact" @click="open = false" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact</a>
+            <a href="https://tylouis.fr" target="_blank" @click="open = false" class="block px-4 py-2 mt-2 mx-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-center">Réserver une table</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="accueil" class="py-16 lg:py-24 bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center">
+        <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left: Text Content -->
+            <div class="text-center lg:text-left" data-aos="fade-up">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-gray-900 mb-6">
+                    Ty Louis Paris
+                    <span class="block text-blue-600">La Bretagne Authentique</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0">
+                    Découvrez une cuisine bretonne originale et savoureuse au cœur de Paris 12e. Sans crêpes ni galettes, mais avec des produits frais, locaux et bio.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="https://tylouis.fr" target="_blank" class="gradient-button">
+                        Voir la carte &amp; Réserver
+                    </a>
+                    <a href="#contact" class="px-8 py-4 bg-transparent border-2 border-blue-600 text-blue-600 font-semibold rounded-lg shadow-md hover:bg-blue-600 hover:text-white transition duration-300">
+                        Nous Contacter
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Image Placeholder -->
+            <div class="relative w-full h-96 lg:h-[600px] bg-gray-300 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <!-- No specific image provided for "restaurant" in BANQUE D'IMAGES, so using a placeholder -->
+                <div class="absolute inset-0 flex items-center justify-center text-gray-600 text-xl font-semibold p-4">
+                    Image du restaurant Ty Louis (ex: plat signature ou intérieur)
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section (Notre Cuisine) -->
+    <section id="services" class="py-16 lg:py-24 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-center text-gray-900 mb-12" data-aos="fade-up">
+                Notre Cuisine &amp; Savoir-faire
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition duration-300 transform" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Cuisine Bretonne Authentique</h3>
+                    <p class="text-gray-600">
+                        Découvrez des plats emblématiques revisités comme le Kig-ha-farz, le Breizh Burger, et des spécialités sans crêpes ni galettes, pour une expérience unique.
+                    </p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition duration-300 transform" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Produits Locaux &amp; Bio</h3>
+                    <p class="text-gray-600">
+                        Nous nous engageons en circuit court, avec des ingrédients frais, bio et issus de producteurs indépendants bretons pour des saveurs inégalées.
+                    </p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition duration-300 transform" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Épicerie Fine &amp; Boissons Locales</h3>
+                    <p class="text-gray-600">
+                        Prolongez l'expérience à la maison grâce à notre épicerie fine sur place et dégustez une sélection de cidres et bières bretonnes.
+                    </p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition duration-300 transform" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Privatisation d'Événements</h3>
+                    <p class="text-gray-600">
+                        Notre salle et notre terrasse sont disponibles pour vos événements privés : anniversaires, afterworks ou repas de groupe.
+                    </p>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition duration-300 transform" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Reconnaissance &amp; Qualité</h3>
+                    <p class="text-gray-600">
+                        Membre du Collège Culinaire de France depuis 2023, noté 9.7/10 sur TheFork et 4.6/5 sur Tripadvisor.
+                    </p>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition duration-300 transform" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Ambiance Conviviale</h3>
+                    <p class="text-gray-600">
+                        Un bistrot breton cosy avec un décor vintage, une terrasse extérieure et une ambiance chaleureuse pour toutes les occasions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 lg:py-24">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+            <!-- Image Placeholder for About Section -->
+            <div class="lg:w-1/2 w-full h-96 bg-gray-200 rounded-3xl shadow-xl flex items-center justify-center overflow-hidden" data-aos="fade-right">
+                <div class="absolute inset-0 flex items-center justify-center text-gray-600 text-xl font-semibold p-4">
+                    Ambiance intérieure du restaurant
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <div class="lg:w-1/2 w-full text-center lg:text-left" data-aos="fade-left">
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">
+                    L'esprit Ty Louis : Tradition &amp; Modernité
+                </h2>
+                <p class="text-lg text-gray-700 mb-4">
+                    Ouvert depuis 2017 au cœur du 12e arrondissement, Ty Louis Paris est bien plus qu'un restaurant : c'est une invitation au voyage culinaire en Bretagne. Membre du prestigieux Collège Culinaire de France, nous nous engageons à offrir une cuisine française traditionnelle modernisée, axée sur les produits du terroir breton.
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    Notre bistrot breton convivial, avec son décor vintage et son ambiance tamisée, est idéal pour les repas familiaux, dîners entre amis ou professionnels. Profitez de notre terrasse extérieure ou privatisez notre espace pour vos événements.
+                </p>
+                <p class="text-lg text-gray-700">
+                    Chaque plat est fait maison, avec des ingrédients de haute qualité issus de producteurs indépendants bretons, garantissant fraîcheur et saveur authentique.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 lg:py-24 bg-blue-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-12" data-aos="fade-up">
+                Nous Contacter
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-16 items-start">
+                <div class="p-8 bg-white rounded-lg shadow-md text-left" data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Informations Pratiques</h3>
+                    <p class="text-lg text-gray-700 mb-2">
+                        <strong>Adresse:</strong> 240 Rue du Faubourg Saint-Antoine, 75012 Paris
+                    </p>
+                    <p class="text-lg text-gray-700 mb-2">
+                        <strong>Téléphone:</strong> Non renseigné (Veuillez consulter PagesJaunes pour le contact)
+                    </p>
+                    <p class="text-lg text-gray-700 mb-2">
+                        <strong>Site Web:</strong> <a href="https://tylouis.fr" target="_blank" class="text-blue-600 hover:underline">tylouis.fr</a>
+                    </p>
+                    <p class="text-lg text-gray-700 mb-2">
+                        <strong>Horaires:</strong> Ouvert du Mardi au Samedi, midi et soir
+                    </p>
+                    <p class="text-lg text-gray-700 mb-2">
+                        <strong>Transports:</strong> Métro Nation (lignes 1, 2, 6, 9), Parking Reuilly-Diderot
+                    </p>
+                    <div class="mt-6">
+                        <a href="https://tylouis.fr" target="_blank" class="gradient-button text-white text-lg w-full">
+                            Réserver via notre site
+                        </a>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-white rounded-lg shadow-md" data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Localisation</h3>
+                    <!-- Google Maps Embed Placeholder -->
+                    <div class="w-full h-80 bg-gray-300 rounded-lg flex items-center justify-center text-gray-600 text-sm overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.97544026362!2d2.388835215674394!3d48.850785079287315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6720f7f32e9f1%3A0x6a0a0b6c6b6c6c6c!2s240%20Rue%20du%20Faubourg%20Saint-Antoine%2C%2075012%20Paris%2C%20France!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; <span x-text="new Date().getFullYear()"></span> Ty Louis Paris. Tous droits réservés.</p>
+            <p class="mt-2 text-sm">Site créé avec passion par un Creative Developer &amp; UI Designer Senior.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            duration: 1000, // values from 0 to 3000, with step 50ms
+            easing: 'ease-out-cubic', // default easing for AOS animations
+        });
+    </script>
+</body>
+</html>
